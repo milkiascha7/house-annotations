@@ -14,7 +14,8 @@ export function Model(props) {
       <group
         rotation={[Math.PI / 2, 0, 0]}
         scale={0.01}
-        onPointerDown={(e) => console.log(e.object.material.name)}>
+        // onPointerDown={(e) => console.log(e.object.material.name)}
+      >
         <mesh
           geometry={nodes['house_water-2_1'].geometry}
           material={materials.ground_1}

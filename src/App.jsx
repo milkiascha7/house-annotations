@@ -93,7 +93,9 @@ function Animate({ controls, lerping, to, target }) {
     if (lerping) {
       camera.position.lerp(to, delta * 2)
       controls.current.target.lerp(target, delta * 2)
+      //   console.log(controls.current.target.lerp(target, delta * 2))
     }
+    // console.log(camera.position)
   })
 }
 

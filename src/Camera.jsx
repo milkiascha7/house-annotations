@@ -7,7 +7,7 @@ const Camera = () => {
   useHelper(cameraRef, CameraHelper, 'red')
   return (
     <>
-      <PerspectiveCamera position={[8, 2, 12]} makeDefault ref={cameraRef} />
+      <PerspectiveCamera position={[8, 2, 12]} ref={cameraRef} />
     </>
   )
 }
