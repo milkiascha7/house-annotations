@@ -15,6 +15,7 @@
   },
   {
     "title": "Bath",
+    "description": "Tub big enough for two people.",
     "camPos": {
       "x": 7.13,
       "y": 4.33,
@@ -42,6 +43,8 @@
   },
   {
     "title": "Sky Light",
+    "description": "For the sunny warm days open and closed.",
+
     "camPos": {
       "x": 13.05,
       "y": 4.35,

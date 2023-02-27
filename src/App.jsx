@@ -1,8 +1,27 @@
 import { Suspense, useState, useRef } from 'react'
 import { Canvas, useFrame } from '@react-three/fiber'
-import { OrbitControls, Environment, Html, Stats } from '@react-three/drei'
+import {
+  OrbitControls,
+  Environment,
+  Html,
+  Stats,
+  CameraControls,
+  PerspectiveCamera,
+  OrthographicCamera,
+  useHelper
+} from '@react-three/drei'
 import { Model } from './House'
 import annotations from './annotations.json'
+import {
+  BufferGeometry,
+  CameraHelper,
+  CatmullRomCurve3,
+  DirectionalLightHelper,
+  LineBasicMaterial,
+  LineLoop,
+  Vector3
+} from 'three'
+import Camera from './Camera'
 
 function Annotations({ selected, gotoAnnotation }) {
   return (
@@ -80,6 +99,7 @@ function Animate({ controls, lerping, to, target }) {
 
 export default function App() {
   const ref = useRef()
+  const cameraRef = useRef()
   const [lerping, setLerping] = useState(false)
   const [to, setTo] = useState()
   const [target, setTarget] = useState()
@@ -95,9 +115,10 @@ export default function App() {
   return (
     <Suspense fallback={null}>
       <Canvas
-        camera={{ position: [8, 2, 12] }}
+        //    camera={{ position: [8, 2, 12] }}
         onPointerDown={() => setLerping(false)}
         onWheel={() => setLerping(false)}>
+        <Camera />
         <OrbitControls ref={ref} target={[8, 2, 3]} />
         <Environment preset="forest" background blur={0.75} />
         <Model />
